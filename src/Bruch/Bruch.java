@@ -1,4 +1,5 @@
-package Bruch;
+package Bruch; ///  послдений вариант сделала в сегодня в 11 часов, его буду сдавать
+
 
 public class Bruch {
 	
@@ -47,22 +48,28 @@ public class Bruch {
 		System.out.println(this.zaehler + "/" + this.nenner);
 	}
 	
-	public boolean istGroesser(Bruch andereBruch) {
-		if(this.zaehler > andereBruch.zaehler) {
+	public boolean istGroesser(Bruch b1, Bruch b2) {
+		int newZahlerB1 = b1.zaehler * b2.nenner;
+		int newZahlerB2 = b2.zaehler * b1.nenner;
+		if(newZahlerB1 > newZahlerB2) {
 			return true;
 		}
 		return false;
 	}
 	
-	public boolean istKleiner(Bruch andereBruch) {
-		if(this.zaehler < andereBruch.zaehler) {
+	public boolean istKleiner(Bruch b1, Bruch b2) {
+		int newZahlerB1 = b1.zaehler * b2.nenner;
+		int newZahlerB2 = b2.zaehler * b1.nenner;
+		if(newZahlerB1 < newZahlerB2) {
 			return true;
 		}
 		return false;
 	}
 	
-	public boolean istGleich(Bruch andereBruch) {
-		if(this.zaehler == andereBruch.zaehler) {
+	public boolean istGleich(Bruch b1, Bruch b2) {
+		int newZahlerB1 = b1.zaehler * b2.nenner;
+		int newZahlerB2 = b2.zaehler * b1.nenner;
+		if(newZahlerB1 == newZahlerB2) {
 			return true;
 		}
 		return false;
@@ -88,5 +95,4 @@ public class Bruch {
 		int ggT = ggT(this.zaehler, this.nenner);
 		return new Bruch(this.zaehler/ggT, this.nenner/ggT);
 	}
-
 }
